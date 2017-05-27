@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ButterflyButton">
+        <attr name="size" format="integer" />
+        <attr name="bubbleColor" format="color"/>
+        <attr name="selectColor" format="color"/>
+        <attr name="buttonColor" format="color"/>
+        <attr name="buttonIcon" format="integer"/>
+        <attr name="relativeX" format="float"/>
+        <attr name="relativeY" format="float"/>
+    </declare-styleable>
+</resources>

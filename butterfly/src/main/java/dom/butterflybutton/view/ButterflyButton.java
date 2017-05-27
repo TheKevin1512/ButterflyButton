@@ -1,4 +1,4 @@
-package dom.butterdombutton.view;
+package dom.butterflybutton.view;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -16,15 +16,15 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import dom.butterdombutton.R;
-import dom.butterdombutton.adapter.IButterdomModel;
-import dom.butterdombutton.model.ButterflyOption;
+import dom.butterflybutton.R;
+import dom.butterflybutton.adapter.IButterflyModel;
+import dom.butterflybutton.model.ButterflyOption;
 
 /**
  * Created by kevindom on 27/05/17.
  */
 
-public class ButterdomButton extends FrameLayout {
+public class ButterflyButton extends FrameLayout {
     /**
      * Breathing space to drag after pressing on an option.
      */
@@ -41,31 +41,31 @@ public class ButterdomButton extends FrameLayout {
 
     private DisplayMetrics screenMetrics;
     private Drawable openIcon;
-    private IButterdomModel model;
+    private IButterflyModel model;
     private FloatingActionButton floatingActionButton;
     private OnOptionSelectedListener listener;
     private boolean isOnClick;
 
-    public ButterdomButton(@NonNull Context context) {
+    public ButterflyButton(@NonNull Context context) {
         super(context);
         init(context, null);
     }
 
-    public ButterdomButton(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public ButterflyButton(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
 
-    public ButterdomButton(@NonNull Context context, @Nullable AttributeSet attrs, @AttrRes int defStyleAttr) {
+    public ButterflyButton(@NonNull Context context, @Nullable AttributeSet attrs, @AttrRes int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
     }
 
     private void init(Context context, AttributeSet attributeSet) {
-        this.model = new ButterdomModel(context);
+        this.model = new ButterflyModel(context);
         View root = inflate(context, R.layout.domlayout, this);
         this.screenMetrics = context.getResources().getDisplayMetrics();
-        this.floatingActionButton = (FloatingActionButton) root.findViewById(R.id.floatingActionButton);
+        this.floatingActionButton = (FloatingActionButton) root.findViewById(R.id.fab);
         this.floatingActionButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,17 +77,17 @@ public class ButterdomButton extends FrameLayout {
             }
         });
         if (attributeSet != null)
-            applyStyling(context.obtainStyledAttributes(attributeSet, R.styleable.ButterdomButton));
+            applyStyling(context.obtainStyledAttributes(attributeSet, R.styleable.ButterflyButton));
         setMinimumWidth((int) this.model.getMaxRadius());
         setMinimumHeight((int) this.model.getMaxRadius());
     }
 
     private void applyStyling(TypedArray arr){
-        int size = arr.getInteger(R.styleable.ButterdomButton_size, 0);
-        Drawable icon = arr.getDrawable(R.styleable.ButterdomButton_buttonIcon);
-        int buttonColor = arr.getColor(R.styleable.ButterdomButton_buttonColor, 0);
-        int bubbleColor = arr.getColor(R.styleable.ButterdomButton_bubbleColor, 0);
-        int selectColor = arr.getColor(R.styleable.ButterdomButton_selectColor, 0);
+        int size = arr.getInteger(R.styleable.ButterflyButton_size, 0);
+        Drawable icon = arr.getDrawable(R.styleable.ButterflyButton_buttonIcon);
+        int buttonColor = arr.getColor(R.styleable.ButterflyButton_buttonColor, 0);
+        int bubbleColor = arr.getColor(R.styleable.ButterflyButton_bubbleColor, 0);
+        int selectColor = arr.getColor(R.styleable.ButterflyButton_selectColor, 0);
         if (size != 0) model.setMaxRadius(size);
         if (icon != null) {
             floatingActionButton.setImageDrawable(icon);
@@ -97,8 +97,8 @@ public class ButterdomButton extends FrameLayout {
         if (bubbleColor != 0) model.setBubbleColor(bubbleColor);
         if (selectColor != 0) model.setSelectedColor(selectColor);
 
-        setRelativeY(arr.getFloat(R.styleable.ButterdomButton_relativeY, 0.0f));
-        setRelativeX(arr.getFloat(R.styleable.ButterdomButton_relativeX, 0.0f));
+        setRelativeY(arr.getFloat(R.styleable.ButterflyButton_relativeY, 0.0f));
+        setRelativeX(arr.getFloat(R.styleable.ButterflyButton_relativeX, 0.0f));
         arr.recycle();
     }
 
@@ -106,11 +106,11 @@ public class ButterdomButton extends FrameLayout {
         floatingActionButton.setBackgroundTintList(ColorStateList.valueOf(color));
     }
 
-    public void setModel(IButterdomModel model) {
+    public void setModel(IButterflyModel model) {
         this.model = model;
     }
 
-    public IButterdomModel getModel() {
+    public IButterflyModel getModel() {
         return model;
     }
 

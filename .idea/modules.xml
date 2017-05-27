@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ButterdomButton.iml" filepath="$PROJECT_DIR$/ButterdomButton.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/butterdombutton_lib/butterdombutton_lib.iml" filepath="$PROJECT_DIR$/butterdombutton_lib/butterdombutton_lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/butterfly/butterfly.iml" filepath="$PROJECT_DIR$/butterfly/butterfly.iml" />
     </modules>
   </component>
 </project>
