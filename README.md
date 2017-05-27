@@ -101,5 +101,5 @@ Add the following line in your **app** gradle:
 
         ...
 
-	    compile 'com.github.TheKevin1512:ButterdomButton:1.1.0'
+	        compile 'com.github.TheKevin1512:ButterflyButton:1.1.0'
     }
