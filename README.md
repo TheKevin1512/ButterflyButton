@@ -1,4 +1,4 @@
-# ButterdomButton
+# ButterflyButton
 A fancy material designed button that makes your app alive!
 
 1. Example of usage in xml
